@@ -324,6 +324,7 @@ export class Parser {
         if (!Helper._isalpha(ch)) {
             if (ch === "\'") {
                 let hex = this.readChar() + this.readChar();
+                if(hex.indexOf('\\')) return
                 if (this.parser.state.pap.charactertype === Helper.CHARACTER_TYPE.DOUBLE) {
                     this.readChar();
                     this.readChar();

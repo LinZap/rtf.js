@@ -850,6 +850,8 @@ var Parser = /** @class */ (function () {
         if (!_Helper__WEBPACK_IMPORTED_MODULE_1__["Helper"]._isalpha(ch)) {
             if (ch === "\'") {
                 var hex = this.readChar() + this.readChar();
+                if (hex.indexOf('\\'))
+                    return;
                 if (this.parser.state.pap.charactertype === _Helper__WEBPACK_IMPORTED_MODULE_1__["Helper"].CHARACTER_TYPE.DOUBLE) {
                     this.readChar();
                     this.readChar();
